@@ -1,37 +1,14 @@
 import React from "react";
-
-const todoList = [
-  {
-    id: 1,
-    title: "project title 1",
-  },
-  {
-    id: 2,
-    title: "project title 2",
-  },
-  {
-    id: 3,
-    title: "project title 3",
-  },
-  {
-    id: 4,
-    title: "project title 4",
-  },
-];
+import ToDoList from "./TodoList";
+import AddTodoForm from "./AddTodoForm";
 
 function App() {
-  const listItem = todoList.map((el) => (
-    // The key prop helps React keep track of the identity of each element in an array of components or elements, which is important for efficient updates to the DOM.
-    <li key={el.id}>
-      {el.id}: {el.title}
-    </li>
-  ));
-
   return (
-    <div>
+    <>
       <h1>Project Tracker App</h1>
-      <ul>{listItem}</ul>
-    </div>
+      <AddTodoForm />
+      <ToDoList />
+    </>
   );
 }
 

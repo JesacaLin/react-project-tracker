@@ -1,4 +1,5 @@
 import React from "react";
+import TodoListItem from "./TodoListItem";
 
 const todoList = [
   {
@@ -22,11 +23,8 @@ const todoList = [
 const ToDoList = () => {
   //code here
 
-  const listItem = todoList.map((el) => (
-    // The key prop helps React keep track of the identity of each element in an array of components or elements, which is important for efficient updates to the DOM.
-    <li key={el.id}>
-      {el.id}: {el.title}
-    </li>
+  const listItem = todoList.map((todo) => (
+    <TodoListItem key={todo.id} todo={todo} />
   ));
 
   return (
